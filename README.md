@@ -32,10 +32,10 @@ pip install -r requirements.txt
 jupyter notebook cnn_cifar10.ipynb
 ```
 
-CIFAR-10 скачивается из `keras.datasets`. В начале ноутбука прунинга стоит обход проверки сертификата — без него датасет не качается с некоторых сетей.
+CIFAR-10 качается первой ячейкой с зеркала на Hugging Face и разбирается в тот же формат, что отдаёт `keras.datasets.cifar10.load_data()`: около 15 секунд вместо четверти часа с сайта Торонто. Запасной путь — оригинальный архив оттуда же. Файлы кладутся в `./cifar10_data` и при следующем запуске берутся с диска.
 
 ## Стек
 
-Python, TensorFlow, Keras, NumPy, Pandas, Matplotlib, seaborn.
+Python, TensorFlow, Keras, NumPy, Pandas, Matplotlib, seaborn; pyarrow и Pillow — для чтения датасета.
 
 Учебный проект курса «Введение в разработку систем искусственного интеллекта», СПбГЭТУ «ЛЭТИ», 2025.
